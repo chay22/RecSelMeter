@@ -35,9 +35,14 @@ abstract class Connection
 	 */
 	public $content;
 
-
+	/**
+	 * @param  string  $url  Store URL
+	 * /
 	function __construct($url)
-	{
+	{	
+		if (!function_exists('curl_version')) {
+			throw new \Exception('This library needs cURL to run!');
+		}
 		$this->init = $this->init($url);
 		$this->connection();
 	}
@@ -61,16 +66,17 @@ abstract class Connection
 	 */
 	public function connection()
 	{
+		
 		$ch = $this->init;
         	curl_setopt_array($ch, ($this->options() + $this->options));
         	if (!$this->content = curl_exec($ch)){
-        	throw new \Exception(
-        		'CURL ERROR! Code: ' . curl_errno($ch) .
-        		'Message: ' . curl_error($ch)
-        	);
-        }
-        $this->header = curl_getinfo($ch);
-        curl_close($ch);
+        		throw new \Exception(
+        			'CURL ERROR! Code: ' . curl_errno($ch) .
+        		'	Message: ' . curl_error($ch)
+        		);
+        	}
+        	$this->header = curl_getinfo($ch);
+        	curl_close($ch);
 	}
 
 	/**
@@ -112,9 +118,9 @@ abstract class Connection
 		//Grab url id in case $url is not valid as required url
 		$id = $url;
 		if (strpos($url, 'product') !== false) {
-    		$id = explode('product',$url);
-    		$id = end($id);
-    		$id = explode('/', $id)[1];
+    			$id = explode('product',$url);
+    			$id = end($id);
+    			$id = explode('/', $id)[1];
 		}
 		
 		//Set the $id as required url
@@ -125,4 +131,3 @@ abstract class Connection
 		return curl_init($url);
 	}
 }
-
