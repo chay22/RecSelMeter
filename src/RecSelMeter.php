@@ -29,7 +29,7 @@ class RecSelMeter
 	protected $score = 0;
 
 	/**
-	 * @param 	string 	$url 	URL of the store
+	 * @param   string  $url  URL of the store
 	 */
 	function __construct($url)
 	{
@@ -167,12 +167,4 @@ class RecSelMeter
 	{
 		$this->score += $this->store['image_count'] * $this->config->data()['imageCount'];
 	}
-
-
 }
-
-
-
-
-
-
