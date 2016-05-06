@@ -4,7 +4,6 @@ namespace Chay22\RecSelMeter;
 
 use chay22\RecSelMeter\Connection;
 
-
 class Parser extends Connection
 {
 	/**
@@ -77,19 +76,19 @@ class Parser extends Connection
 		$product = $this->product();
 
 		return [
-				'username'			=>	$this->username(),
-				'user_id'			=>	$this->userID(),
-				'rank'				=>	$this->rank(),
-				'feedback'			=>	$this->feedback(),
-				'feedback_percent'	=>	$this->feedbackPercent(),
-				'join_date'			=>	$this->joinDate(),
-				'verified'			=>	$this->verifiedSeller(),
-				'published_at'		=> 	$this->threadPublished(),
-				'image_count'		=>	$this->countImage(),
-				'sold'				=>	$product['sold'],
-				'cod'				=>	$product['cod'],
-				'last_bump'			=>	$product['bump'],
-			   ];
+			'username'		=>	$this->username(),
+			'user_id'		=>	$this->userID(),
+			'rank'			=>	$this->rank(),
+			'feedback'		=>	$this->feedback(),
+			'feedback_percent'	=>	$this->feedbackPercent(),
+			'join_date'		=>	$this->joinDate(),
+			'verified'		=>	$this->verifiedSeller(),
+			'published_at'		=> 	$this->threadPublished(),
+			'image_count'		=>	$this->countImage(),
+			'sold'			=>	$product['sold'],
+			'cod'			=>	$product['cod'],
+			'last_bump'		=>	$product['bump'],
+			];
 	}
 
 	/**
@@ -100,8 +99,8 @@ class Parser extends Connection
 	public function username()
 	{
 		return $this->find('//meta[@name="author"]')
-				->item(0)
-				->getAttribute('content');
+			    ->item(0)
+			    ->getAttribute('content');
 	}
 
 	/**
@@ -112,8 +111,8 @@ class Parser extends Connection
 	public function userID()
 	{
 		$query = $this->find(
-					'//div[contains(@class,"seller-detail-info")]' . 
-					'/span[contains(@class,"username")]/a'
+				    '//div[contains(@class,"seller-detail-info")]' . 
+				    '/span[contains(@class,"username")]/a'
 				)->item(0)
 				 ->getAttribute('href');
 		$query = explode('/', $query);
@@ -173,8 +172,8 @@ class Parser extends Connection
 	public function feedbackPercent()
 	{
 		$query = $this->find(
-					'//div[contains(@class,"seller-detail-info")]' . 
-					'/span[contains(@class,"feedback")]'
+				    '//div[contains(@class,"seller-detail-info")]' . 
+				    '/span[contains(@class,"feedback")]'
 				)->item(0)
 				 ->getElementsByTagName('strong')
 				 ->item(0)
@@ -191,8 +190,8 @@ class Parser extends Connection
 	public function joinDate()
 	{
 		$query = $this->find(
-					'//div[contains(@class,"seller-detail-info")]' . 
-					'/span[not(@class)]'
+				    '//div[contains(@class,"seller-detail-info")]' . 
+				    '/span[not(@class)]'
 				)->item(0)
 				 ->nodeValue;
 		$query = str_replace('join: ', '', strtolower($query));
@@ -218,12 +217,12 @@ class Parser extends Connection
 	/**
 	 * Find date of thread started
 	 * 
-	 * @return string 	date thread started
+	 * @return string   date thread started
 	 */
 	public function threadPublished()
 	{
 		$query = $this->find(
-					'//div[contains(@class,"user-details")]/time'
+				    '//div[contains(@class,"user-details")]/time'
 				)->item(0)
 				 ->getAttribute('datetime');
 		$date = new \DateTime;
@@ -234,7 +233,7 @@ class Parser extends Connection
 	/**
 	 * Return product specified entities
 	 * 
-	 * @return array 	sold, bump, cod
+	 * @return array  sold, bump, cod
 	 */
 	public function product()
 	{
@@ -271,11 +270,9 @@ class Parser extends Connection
 		}
 
 		return [
-				'sold' => $this->sold,
-				'cod' => $this->cod,
-				'bump' => $this->bump,
-			   ];
+			'sold' => $this->sold,
+			'cod' => $this->cod,
+			'bump' => $this->bump,
+		       ];
 	}
-
 }
-
