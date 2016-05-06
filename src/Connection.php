@@ -62,8 +62,8 @@ abstract class Connection
 	public function connection()
 	{
 		$ch = $this->init;
-        curl_setopt_array($ch, ($this->options() + $this->options));
-        if (!$this->content = curl_exec($ch)){
+        	curl_setopt_array($ch, ($this->options() + $this->options));
+        	if (!$this->content = curl_exec($ch)){
         	throw new \Exception(
         		'CURL ERROR! Code: ' . curl_errno($ch) .
         		'Message: ' . curl_error($ch)
@@ -81,10 +81,10 @@ abstract class Connection
 	public function result()
 	{
 		return [
-				'headers', $this->connection['headers'],
-				'header', $this->connection['header'],
-				'content', $this->connection['content'],
-			   ];
+			'headers', $this->connection['headers'],
+			'header', $this->connection['header'],
+			'content', $this->connection['content'],
+		       ];
 	}
 
 	/**
@@ -95,17 +95,17 @@ abstract class Connection
 	protected function options()
 	{
 		return [
-				CURLOPT_RETURNTRANSFER => true,
-				CURLOPT_FOLLOWLOCATION => true,
-            	CURLOPT_ENCODING       => '',
-            	CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
-			   ];
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_FOLLOWLOCATION => true,
+            		CURLOPT_ENCODING       => '',
+            		CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+		       ];
 	}
 
 	/**
 	 * Validate URL and start cURL session;
-	 * 
-	 * @return 
+	 *
+	 * @param  string  $url  Store URL
 	 */
 	protected function init($url)
 	{
@@ -116,6 +116,7 @@ abstract class Connection
     		$id = end($id);
     		$id = explode('/', $id)[1];
 		}
+		
 		//Set the $id as required url
 		$this->url = 'http://fjb.kaskus.co.id/product/' . $id;
 		if (!curl_init($url)) {
@@ -123,6 +124,5 @@ abstract class Connection
 		}
 		return curl_init($url);
 	}
-
 }
 
