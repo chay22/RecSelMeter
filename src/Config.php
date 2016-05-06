@@ -9,21 +9,17 @@ class Config
 	 * @var array $rank
 	 */
 	private $rank = [
-					'auto banned'			=> -100,
-					'newbie'				=> 0,
-					'kaskuser'				=> 0,
-					'aktivis kaskus'		=> 0,
-					'kaskus holic'			=> 0,
-					'kaskus addict'			=> 5,
-					'kaskus maniac'			=> 6,
-					'kaskus geek'			=> 7,
-					'kaskus freak'			=> 10,
-					'made in kaskus'		=> 15,
-					'kaskus plus'			=> 15,
-					'reg. leader'			=> 15,
-					'moderator'				=> 15,
-					'kaskus online bazaar'	=> 200,
-					];
+			 'auto banned'		=> -100,
+			 'kaskus addict'	=> 2,
+			 'kaskus maniac'	=> 3,
+			 'kaskus geek'		=> 7,
+			 'kaskus freak'		=> 10,
+			 'made in kaskus'	=> 15,
+			 'kaskus plus'		=> 15,
+			 'reg. leader'		=> 15,
+			 'moderator'		=> 15,
+			 'kaskus online bazaar'	=> 200,
+			];
 
 	/**
 	 * @var array $feedback
@@ -44,11 +40,11 @@ class Config
 	 * @var array $storeActive
 	 */
 	private $storeActive = [
-							7 	=> 	1,
-							3 	=> 	5,
-							1 	=> 	8,
-							0	=>	10,
-						  ];
+				7 => 1,
+				3 => 5,
+				1 => 8,
+				0 => 10,
+			       ];
 	/**
 	 * @var string $imageCount
 	 */				  
@@ -58,11 +54,11 @@ class Config
 	 * @var array $sold
 	 */
 	private $sold = [
-					 0	=> 0,
-					 1 	=> 20,
-					 5 	=> 50,
-					 10 => 100,
-				   ];
+			 0  => 0,
+			 1  => 20,
+			 5  => 50,
+			 10 => 100,
+			];
 	/**
 	 * @var string $cod
 	 */
@@ -175,5 +171,4 @@ class Config
 	{	
 		$this->{$config['name']} = $config['value'] + $this->{$config['name']};
 	}
-
 }
