@@ -1,0 +1,28 @@
+{
+    "name": "chay22/recselmeter",
+    "description": "Calculate KASKUS store (lapak) trustworthy score (recommended atau ga ya?)",
+    "keywords" : ["kaskus", "lapak", "fjb", "recsel"],
+    "type": "library",
+    "license": "MIT",
+    "homepage" : "https://enchay.ru",
+    "authors": [
+        {
+            "name": "Cahyadi Nugraha",
+            "email": "cahyadinugraha18@gmail.com",
+            "homepage": "https://enchay.ru",
+            "role" : "Developer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/chay22/RecSelMeter"
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chay22\\RecSelMeter\\": "src"
+        }
+    }
+}
