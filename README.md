@@ -55,6 +55,10 @@ print_r($data);
 ```
 Sudah tau data-datanya? RecSelMeter menyediakan 3 method untuk mengubah nilai-nilai pada property penunjang bawaan, yakni `new`, `add`, `set`.
 
+
+>**NOTE:** Ketiga method ini hanya bisa mengubah property `rank`, `storeActive` dan `sold`.
+
+
 ### **`new`**
 Berfungsi untuk menimpa nilai config bawaan dengan nilai baru pada property yang dipilih, contoh:
 ```
