@@ -2,7 +2,7 @@
 
 namespace Chay22\RecSelMeter;
 
-use chay22\RecSelMeter\Connection;
+use Chay22\RecSelMeter\Connection;
 
 class Parser extends Connection
 {
