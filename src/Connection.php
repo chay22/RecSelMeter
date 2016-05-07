@@ -37,7 +37,7 @@ abstract class Connection
 
 	/**
 	 * @param  string  $url  Store URL
-	 * /
+	 */
 	function __construct($url)
 	{	
 		if (!function_exists('curl_version')) {
