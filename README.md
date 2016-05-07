@@ -1,6 +1,14 @@
 # RecSelMeter
 Ukur tingkat kepercayaan sebuah lapak KASKUS. Hal ini sedikit berguna untuk mencegah terjadinya maraknya penipuan online di KASKUS dengan menganalisa lapak melalui URL. Hal yang sama juga berguna agar para seller KASKUS mau (belajar) mengubah lapaknya agar lebih baik atau setidaknya sesuai standar yang KASKUS berikan.
 
+
+[![Build Passing](https://img.shields.io/travis/chay22/RecSelMeter/master.svg?style=flat)](https://travis-ci.org/chay22/RecSelMeter)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/chay22/recselmeter.svg)](https://scrutinizer-ci.com/g/chay22/RecSelMeter/?branch=master)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/chay22/recselmeter.svg)](https://scrutinizer-ci.com/g/chay22/RecSelMeter/?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/chay22/recselmeter.svg)](https://packagist.org/packages/chay22/recselmeter)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/chay22/RecSelMeter/master/LICENSE)
+
+
 ## Contents
 * [Example](#example)
 * [Parameter Penunjang](#parameter-penunjang)
