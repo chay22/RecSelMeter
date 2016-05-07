@@ -1,6 +1,17 @@
 # RecSelMeter
 Ukur tingkat kepercayaan sebuah lapak KASKUS. Hal ini sedikit berguna untuk mencegah terjadinya maraknya penipuan online di KASKUS dengan menganalisa lapak melalui URL. Hal yang sama juga berguna agar para seller KASKUS mau (belajar) mengubah lapaknya agar lebih baik atau setidaknya sesuai standar yang KASKUS berikan.
 
+## Contents
+* [Example](#example)
+* [Parameter Penunjang](#parameter-penunjang)
+* [Installation](#installation)
+* [Configuration](#configuration)
+  * [`new`](#new)
+  * [`add`](#add)
+  * [`set`](#set)
+* [Author](#author)
+* [License](#license)
+
 ## Example
 Semudah memakai pakaian sehari-hari. RecSelMeter hanya memerlukan valid lapak KASKUS URL yang ingin dianalisa dan sebuah method.
 ```
@@ -23,7 +34,7 @@ Terdapat beberapa parameter sebagai penunjang dalam menilai sebuah lapak,
 * Jumlah gambar produk
 
 ---
-##Installation
+## Installation
 Instalasi RecSelMeter menggunakan [composer](https://getcomposer.org/)
 ```
 composer require chay22/recselmeter
@@ -44,7 +55,7 @@ print_r($data);
 ```
 Sudah tau data-datanya? RecSelMeter menyediakan 3 method untuk mengubah nilai-nilai pada property penunjang bawaan, yakni `new`, `add`, `set`.
 
-1) **`new`**
+### **`new`**
 Berfungsi untuk menimpa nilai config bawaan dengan nilai baru pada property yang dipilih, contoh:
 ```
 $recselmeter->config()->newRank([
@@ -58,15 +69,14 @@ $recselmeter->config()->newSold([
                         3 => 100,
                   ]);
 ```
-
-2) **`add`**
+### **`add`**
 Berfungsi untuk menambah nilai baru pada property yang dituju, contoh:
 ```
 $recselmeter->config()->addRank(['Aktivis Kaskus' => 30]);
 $recselmeter->config()->addSold([7 => 60]);
 ```
 
-3) **`set`**
+### **`set`**
 Berfungsi untuk mengubah nilai bawaan yang tersedia pada property yang dituju, contoh:
 ```
 $recselmeter->config()->setStoreActive([7 => 3]);
