@@ -225,7 +225,7 @@ class Parser extends Connection
 				    '//div[contains(@class,"user-details")]/time'
 				)->item(0)
 				 ->getAttribute('datetime');
-		$date = new \DateTime;
+		$date = new \DateTime($query);
 
 		return $date->format('Y-m-d H:i:s');	
 	}
