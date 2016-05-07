@@ -28,7 +28,7 @@ class ConfigTests extends \PHPUnit_Framework_TestCase
 		$config = new Config;
 		$config->addRank(['kaskus test' => 100]);
 		$this->assertArrayHasKey('kaskus test', $config->data()['rank']);
-		$this->assertCount(15, $config->data()['rank']);
+		$this->assertCount(11, $config->data()['rank']);
 	}
 
 	public function testSet()
