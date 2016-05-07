@@ -43,7 +43,8 @@ $data = $recselmeter->config()->data();
 print_r($data);
 ```
 Sudah tau data-datanya? RecSelMeter menyediakan 3 method untuk mengubah nilai-nilai pada property penunjang bawaan, yakni `new`, `add`, `set`.
-1. **`new`**
+
+1) **`new`**
 Berfungsi untuk menimpa nilai config bawaan dengan nilai baru pada property yang dipilih, contoh:
 ```
 $recselmeter->config()->newRank([
@@ -57,13 +58,15 @@ $recselmeter->config()->newSold([
                         3 => 100,
                   ]);
 ```
-2. **`add`**
+
+2) **`add`**
 Berfungsi untuk menambah nilai baru pada property yang dituju, contoh:
 ```
 $recselmeter->config()->addRank(['Aktivis Kaskus' => 30]);
 $recselmeter->config()->addSold([7 => 60]);
 ```
-3. **`set`**
+
+3) **`set`**
 Berfungsi untuk mengubah nilai bawaan yang tersedia pada property yang dituju, contoh:
 ```
 $recselmeter->config()->setStoreActive([7 => 3]);
